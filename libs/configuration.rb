@@ -6,13 +6,13 @@ class Configuration
   end
 
   def configure
-    #set_size
+    set_size
     set_players_mark
-    #set_goal
+    set_goal
   end
 
   def set_size
-    @size = @game_io.set_size
+    @size = @game_io.set_size.to_i
   end
 
   def set_players_mark
@@ -24,6 +24,6 @@ class Configuration
   end
 
   def set_goal
-    @goal = @game_io.set_goal
+    @goal = @game_io.set_goal(size).to_i
   end
 end

@@ -16,8 +16,8 @@ class GameIO
     request_message('choose your board size(3 - 10): ', (3..10).to_a.map(&:to_s))
   end
 
-  def set_goal
-    request_message('choose your goal size(3 - 5): ', (3..5).to_a.map(&:to_s))
+  def set_goal(size)
+    request_message('choose your goal size(3 - 5): ', (3..size).to_a.map(&:to_s))
   end
 
   def get_move(board)

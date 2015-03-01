@@ -9,8 +9,8 @@ class Game
     @config = config || Configuration.new(@game_io)
     @config.configure
 
-    @board = Board.new 3#(@config.size)
-    @rules = Rules.new 3#(@config.goal)
+    @board = Board.new(@config.size)
+    @rules = Rules.new(@config.goal)
     @players = @config.player.clone
   end
 

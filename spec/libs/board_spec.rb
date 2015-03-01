@@ -15,7 +15,7 @@ describe Board do
       matrix = matrix.flatten.uniq
 
       expect(matrix.size).to eq(1)
-      expect(matrix).to be_include('')
+      expect(matrix).to be_include('-')
     end
   end
 
