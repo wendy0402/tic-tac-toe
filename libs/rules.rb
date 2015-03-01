@@ -6,7 +6,7 @@ class Rules
   def player_won?(board, player)
     solutions = board.rows + board.columns + board.diagonal_right
     solutions.each.any? do |sequences|
-      mark_streak?(sequences, player)
+      mark_streak?(sequences, player,board)
     end
   end
 
@@ -14,9 +14,12 @@ class Rules
     board.full?
   end
 
-  def mark_streak?(sequences, player)
+  private
+
+  def mark_streak?(sequences, player,board)
     sequences.each_index.any? do |index|
-      sequences[index .. index + (@goal - 1) ].uniq == [player.mark]
+      sequence = sequences[index .. index + (@goal - 1)]
+      sequence.uniq == [player.mark] && sequence.size == @goal
     end
   end
 end
